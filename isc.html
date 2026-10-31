@@ -1,0 +1,1660 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Información académica sobre Ingeniería en Sistemas Computacionales del Instituto Tecnológico de Morelia: ingreso, retícula, semestres y perfil de egreso.">
+    <title>Ingeniería en Sistemas Computacionales | ITM - TecNM</title>
+
+    <style>
+        /* =========================================
+           VARIABLES Y CONFIGURACIÓN GENERAL
+        ========================================= */
+        :root {
+            --bg: #f1f3f5;
+            --surface: #ffffff;
+            --surface-alt: #e8ebef;
+            --primary: #252b33;
+            --primary-light: #343d48;
+            --secondary: #586575;
+            --accent: #aeb9c5;
+            --text: #252b33;
+            --muted: #647080;
+            --border: #d5dbe2;
+            --shadow: 0 8px 25px rgba(25, 32, 42, 0.08);
+            --radius: 14px;
+            --max-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-header {
+            max-width: 800px;
+            margin-bottom: 35px;
+        }
+
+        .section-number {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .subsection-title {
+            color: var(--primary);
+            font-size: 1.45rem;
+            margin: 35px 0 15px;
+        }
+
+        /* =========================================
+           NAVEGACIÓN
+        ========================================= */
+        .navbar {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(31, 37, 45, 0.97);
+            color: #fff;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 190px;
+        }
+
+        .brand-mark {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            border: 2px solid #cbd2da;
+            border-radius: 9px;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .brand-text strong {
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-text span {
+            color: #c3cbd5;
+            font-size: 0.72rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e2e6eb;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links .nav-button {
+            padding: 9px 15px;
+            border: 1px solid #8793a1;
+            border-radius: 7px;
+        }
+
+        .nav-links .nav-button.active {
+            background: #e3e8ed;
+            color: #222a33;
+            border-color: #e3e8ed;
+            font-weight: 700;
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid #8994a0;
+            border-radius: 7px;
+            background: transparent;
+            color: white;
+            padding: 7px 11px;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           PORTADA
+        ========================================= */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 155px 0 95px;
+            color: white;
+            background:
+                radial-gradient(circle at 85% 25%, rgba(157, 173, 191, 0.22), transparent 28%),
+                linear-gradient(125deg, #20262e, #384452 65%, #4a5867);
+        }
+
+        .hero::after {
+            content: "ISC";
+            position: absolute;
+            right: 4%;
+            bottom: -55px;
+            color: rgba(255, 255, 255, 0.045);
+            font-size: clamp(9rem, 22vw, 19rem);
+            font-weight: 900;
+            letter-spacing: -15px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 7px 13px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            color: #e0e6ed;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin-bottom: 22px;
+            font-size: clamp(2.3rem, 6vw, 4rem);
+            line-height: 1.12;
+        }
+
+        .hero p {
+            max-width: 760px;
+            color: #d5dce4;
+            font-size: 1.08rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .hero-link {
+            display: inline-block;
+            padding: 11px 19px;
+            border: 1px solid #c4ced8;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .hero-link.primary {
+            background: #e2e7ed;
+            color: #252b33;
+        }
+
+        .hero-link:hover {
+            transform: translateY(-2px);
+            background: #fff;
+            color: #252b33;
+        }
+
+        /* =========================================
+           INGRESO
+        ========================================= */
+        .entry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .info-card {
+            padding: 25px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .info-card p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .card-icon {
+            display: grid;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 15px;
+            place-items: center;
+            border-radius: 10px;
+            background: var(--surface-alt);
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .notice {
+            margin-top: 24px;
+            padding: 18px 20px;
+            border-left: 4px solid #687788;
+            border-radius: 0 9px 9px 0;
+            background: #e7ebef;
+            color: #4c5866;
+            font-size: 0.92rem;
+        }
+
+        /* =========================================
+           RETÍCULA GENERAL
+        ========================================= */
+        .curriculum-section {
+            background: #e8ebef;
+        }
+
+        .curriculum-intro {
+            max-width: 850px;
+            margin-bottom: 25px;
+            color: var(--muted);
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .area-card {
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .area-card:last-child {
+            grid-column: 1 / -1;
+        }
+
+        .area-card-header {
+            padding: 16px 20px;
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .area-card-header h3 {
+            font-size: 1rem;
+        }
+
+        .area-card-body {
+            padding: 20px;
+        }
+
+        .subject-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .subject-list li {
+            padding: 7px 11px;
+            border: 1px solid #dce1e7;
+            border-radius: 7px;
+            background: #f4f6f8;
+            color: #475363;
+            font-size: 0.84rem;
+        }
+
+        /* =========================================
+           SEMESTRES
+        ========================================= */
+        .semester-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0 30px;
+        }
+
+        .summary-item {
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            background: var(--surface);
+            text-align: center;
+        }
+
+        .summary-item strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.65rem;
+        }
+
+        .summary-item span {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .semester-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .semester-card {
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(25, 32, 42, 0.05);
+        }
+
+        .semester-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 17px;
+            background: #303945;
+            color: white;
+        }
+
+        .semester-heading h3 {
+            font-size: 1rem;
+        }
+
+        .semester-heading span {
+            color: #c8d1db;
+            font-size: 0.75rem;
+        }
+
+        .semester-card ul {
+            padding: 17px 17px 17px 35px;
+        }
+
+        .semester-card li {
+            margin-bottom: 9px;
+            padding-left: 2px;
+            color: #566170;
+            font-size: 0.87rem;
+            line-height: 1.45;
+        }
+
+        .semester-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .semester-card li::marker {
+            color: #778595;
+        }
+
+        /* =========================================
+           CRÉDITOS
+        ========================================= */
+        .credits-wrapper {
+            margin-top: 35px;
+            padding: 25px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .credits-wrapper h3 {
+            margin-bottom: 17px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+        }
+
+        .credits-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 420px;
+        }
+
+        .credits-table th,
+        .credits-table td {
+            padding: 13px 15px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .credits-table th {
+            background: #303945;
+            color: white;
+            font-size: 0.88rem;
+        }
+
+        .credits-table td {
+            color: #566170;
+            font-size: 0.91rem;
+        }
+
+        .credits-table td:last-child,
+        .credits-table th:last-child {
+            text-align: center;
+        }
+
+        .credits-table tr:last-child td {
+            border-bottom: none;
+            background: #e8ebef;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* =========================================
+           EXTRAS
+        ========================================= */
+        .extras-section {
+            background: #f8f9fa;
+        }
+
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .extra-card {
+            padding: 25px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .extra-card h3 {
+            margin-bottom: 11px;
+            color: var(--primary);
+            font-size: 1.15rem;
+        }
+
+        .extra-card p {
+            margin-bottom: 12px;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .extra-meta {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            background: #e9edf1;
+            color: #3c4856;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .extra-card.full {
+            grid-column: 1 / -1;
+        }
+
+        /* =========================================
+           PERFIL DE EGRESO
+        ========================================= */
+        .profile-section {
+            background: #e8ebef;
+        }
+
+        .profile-intro {
+            max-width: 900px;
+            margin-bottom: 28px;
+            padding: 23px;
+            border-radius: 12px;
+            background: #303945;
+            color: #e4e9ef;
+            font-size: 1rem;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .profile-card {
+            padding: 23px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: white;
+        }
+
+        .profile-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.08rem;
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        /* =========================================
+           REFERENCIAS
+        ========================================= */
+        .references-section {
+            background: #252c35;
+            color: #fff;
+        }
+
+        .references-section .section-title {
+            color: #fff;
+        }
+
+        .references-section .section-description {
+            color: #c4ccd5;
+        }
+
+        .references-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 25px;
+            list-style: none;
+        }
+
+        .references-list li {
+            padding: 19px 21px;
+            border: 1px solid #4b5663;
+            border-radius: 10px;
+            background: #303945;
+            color: #dce2e9;
+            font-size: 0.9rem;
+        }
+
+        .references-list strong {
+            display: block;
+            margin-bottom: 6px;
+            color: white;
+        }
+
+        .references-list a {
+            display: inline-block;
+            margin-top: 7px;
+            color: #c5d3e1;
+            overflow-wrap: anywhere;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .references-list a:hover {
+            color: #fff;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+        footer {
+            padding: 27px 0;
+            background: #1c2229;
+            color: #aeb8c3;
+            text-align: center;
+            font-size: 0.83rem;
+        }
+
+        footer strong {
+            color: #fff;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d0d7df;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 13px;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .semester-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            html {
+                scroll-padding-top: 75px;
+            }
+
+            .nav-container {
+                min-height: 65px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                display: none;
+                width: 100%;
+                padding: 17px 5%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: #252c35;
+                border-top: 1px solid #46515e;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 11px 0;
+                border-bottom: 1px solid #3e4854;
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links .nav-button {
+                display: inline-block;
+            }
+
+            .hero {
+                padding: 125px 0 75px;
+            }
+
+            .section {
+                padding: 55px 0;
+            }
+
+            .entry-grid,
+            .area-grid,
+            .extras-grid,
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .area-card:last-child,
+            .extra-card.full {
+                grid-column: auto;
+            }
+
+            .semester-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .semester-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.35rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVEGACIÓN PRINCIPAL
+    ========================================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="brand" aria-label="Regresar a la página principal">
+                <div class="brand-mark">ITM</div>
+                <div class="brand-text">
+                    <strong>TecNM Morelia</strong>
+                    <span>Instituto Tecnológico de Morelia</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Abrir menú de navegación"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <nav aria-label="Navegación principal">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#carreras">Carreras</a></li>
+                    <li><a href="index.html#proyectos">Proyectos</a></li>
+                    <li><a href="index.html#sustentabilidad">Sustentabilidad</a></li>
+                    <li><a href="icbs.html" class="nav-button">Ciberseguridad</a></li>
+                    <li><a href="isc.html" class="nav-button active" aria-current="page">ISC</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================================
+         PORTADA
+    ========================================= -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+
+                <span class="hero-label">Oferta educativa · TecNM Morelia</span>
+
+                <h1>Ingeniería en Sistemas Computacionales</h1>
+
+                <p>
+                    Una formación multidisciplinaria orientada al análisis,
+                    diseño, desarrollo, implementación y mantenimiento de
+                    sistemas informáticos. Integra conocimientos de software,
+                    hardware, redes, bases de datos e infraestructura para
+                    desarrollar soluciones tecnológicas.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#ingreso" class="hero-link primary">Conocer la carrera</a>
+                    <a href="#reticula" class="hero-link">Consultar retícula</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <main>
+
+        <!-- =========================================
+             1. INGRESO
+        ========================================= -->
+        <section class="section" id="ingreso">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">01 · Perfil de ingreso</span>
+                    <h2 class="section-title">¿Qué se necesita para ingresar?</h2>
+                    <p class="section-description">
+                        Para estudiar Ingeniería en Sistemas Computacionales
+                        es recomendable contar con interés por la tecnología,
+                        disposición para resolver problemas y bases que
+                        faciliten el aprendizaje de las ciencias y la computación.
+                    </p>
+                </div>
+
+                <div class="entry-grid">
+
+                    <article class="info-card">
+                        <div class="card-icon">∑</div>
+                        <h3>Razonamiento lógico-matemático</h3>
+                        <p>
+                            Capacidad para analizar situaciones, reconocer
+                            patrones, comprender procedimientos matemáticos
+                            y desarrollar soluciones mediante el razonamiento.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">⌘</div>
+                        <h3>Pensamiento analítico</h3>
+                        <p>
+                            Habilidad para examinar problemas, identificar
+                            sus componentes y plantear alternativas de solución
+                            mediante un análisis ordenado.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">⚙</div>
+                        <h3>Interés por la tecnología</h3>
+                        <p>
+                            Curiosidad por conocer el funcionamiento de
+                            computadoras, programas, redes, dispositivos y
+                            sistemas informáticos.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">↗</div>
+                        <h3>Organización y creatividad</h3>
+                        <p>
+                            Disposición para organizar actividades, proponer
+                            ideas y buscar diferentes formas de resolver
+                            problemas técnicos.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">◎</div>
+                        <h3>Trabajo en equipo</h3>
+                        <p>
+                            Capacidad para colaborar con otras personas,
+                            compartir conocimientos y participar en proyectos
+                            que requieren coordinación.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">↻</div>
+                        <h3>Comunicación y aprendizaje</h3>
+                        <p>
+                            Disposición para comunicar ideas, aprender de
+                            manera autónoma y adaptarse a nuevas herramientas
+                            y tecnologías.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="notice">
+                    <strong>Importante:</strong>
+                    Las habilidades descritas corresponden a características
+                    recomendables para iniciar la formación en esta carrera.
+                    No constituyen por sí mismas una lista de requisitos
+                    oficiales de admisión. Los requisitos administrativos
+                    deben consultarse en las convocatorias vigentes del
+                    Instituto Tecnológico de Morelia.
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             2. RETÍCULA
+        ========================================= -->
+        <section class="section curriculum-section" id="reticula">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">02 · Plan de estudios</span>
+                    <h2 class="section-title">Retícula de Ingeniería en Sistemas Computacionales</h2>
+                    <p class="section-description">
+                        El plan de estudios integra ciencias básicas,
+                        programación, desarrollo de software, bases de datos,
+                        hardware, sistemas operativos, redes y formación
+                        profesional. Su organización permite desarrollar
+                        conocimientos de manera progresiva.
+                    </p>
+                </div>
+
+
+                <!-- 2.1 RETÍCULA GENERAL -->
+                <h3 class="subsection-title">2.1. Asignaturas por área temática</h3>
+
+                <p class="curriculum-intro">
+                    La siguiente clasificación organiza las asignaturas
+                    de la retícula por afinidad temática. Su propósito es
+                    facilitar la consulta y comprensión de las áreas de
+                    formación; no representa el orden en que se cursan
+                    durante los semestres.
+                </p>
+
+                <div class="area-grid">
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>A. Ciencias básicas y matemáticas</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Cálculo Diferencial</li>
+                                <li>Cálculo Integral</li>
+                                <li>Cálculo Vectorial</li>
+                                <li>Ecuaciones Diferenciales</li>
+                                <li>Álgebra Lineal</li>
+                                <li>Matemáticas Discretas</li>
+                                <li>Probabilidad y Estadística</li>
+                                <li>Física General</li>
+                                <li>Química</li>
+                                <li>Métodos Numéricos</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>B. Programación y desarrollo</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Fundamentos de Programación</li>
+                                <li>Programación Orientada a Objetos</li>
+                                <li>Estructura de Datos</li>
+                                <li>Tópicos Avanzados de Programación</li>
+                                <li>Graficación</li>
+                                <li>Lenguajes y Autómatas I</li>
+                                <li>Lenguajes y Autómatas II</li>
+                                <li>Programación Lógica y Funcional</li>
+                                <li>Inteligencia Artificial</li>
+                                <li>Lenguajes de Interfaz</li>
+                                <li>Sistemas Programables</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>C. Bases de datos e ingeniería de software</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Fundamentos de Base de Datos</li>
+                                <li>Taller de Base de Datos</li>
+                                <li>Administración de Base de Datos</li>
+                                <li>Fundamentos de Ingeniería de Software</li>
+                                <li>Ingeniería de Software</li>
+                                <li>Gestión de Proyectos de Software</li>
+                                <li>Programación Web</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>D. Hardware, sistemas operativos y redes</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Principios Eléctricos y Aplicaciones Digitales</li>
+                                <li>Arquitectura de Computadoras</li>
+                                <li>Fundamentos de Telecomunicaciones</li>
+                                <li>Sistemas Operativos</li>
+                                <li>Taller de Sistemas Operativos</li>
+                                <li>Redes de Computadoras</li>
+                                <li>Conmutación y Enrutamiento en Redes de Datos</li>
+                                <li>Administración de Redes</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>E. Gestión, investigación y formación complementaria</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Taller de Ética</li>
+                                <li>Fundamentos de Investigación</li>
+                                <li>Contabilidad Financiera</li>
+                                <li>Taller de Administración</li>
+                                <li>Cultura Empresarial</li>
+                                <li>Investigación de Operaciones</li>
+                                <li>Desarrollo Sustentable</li>
+                                <li>Taller de Investigación I</li>
+                                <li>Taller de Investigación II</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </div>
+
+
+                <!-- 2.2 SEMESTRES -->
+                <h3 class="subsection-title">2.2. Distribución de asignaturas por semestre</h3>
+
+                <p class="curriculum-intro">
+                    La siguiente distribución presenta las asignaturas
+                    correspondientes a cada uno de los nueve semestres
+                    de la carrera, conforme a la retícula consultada.
+                </p>
+
+                <div class="semester-summary">
+                    <div class="summary-item">
+                        <strong>9</strong>
+                        <span>Semestres</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>260</strong>
+                        <span>Créditos totales</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>2016</strong>
+                        <span>Retícula consultada</span>
+                    </div>
+                </div>
+
+                <div class="semester-grid">
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 1</h3>
+                            <span>Primer periodo</span>
+                        </div>
+                        <ul>
+                            <li>Cálculo Diferencial</li>
+                            <li>Fundamentos de Programación</li>
+                            <li>Taller de Ética</li>
+                            <li>Matemáticas Discretas</li>
+                            <li>Taller de Administración</li>
+                            <li>Fundamentos de Investigación</li>
+                        </ul>
+                    </article>
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 2</h3>
+                            <span>Segundo periodo</span>
+                        </div>
+                        <ul>
+                            <li>Cálculo Integral</li>
+                            <li>Programación Orientada a Objetos</li>
+                            <li>Contabilidad Financiera</li>
+                            <li>Química</li>
+                            <li>Álgebra Lineal</li>
+                            <li>Probabilidad y Estadística</li>
+                        </ul>
+                    </article>
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 3</h3>
+                            <span>Tercer periodo</span>
+                        </div>
+                        <ul>
+                            <li>Cálculo Vectorial</li>
+                            <li>Estructura de Datos</li>
+                            <li>Cultura Empresarial</li>
+                            <li>Investigación de Operaciones</li>
+                            <li>Desarrollo Sustentable</li>
+                            <li>Física General</li>
+                        </ul>
+                    </article>
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 4</h3>
+                            <span>Cuarto periodo</span>
+                        </div>
+                        <ul>
+                            <li>Ecuaciones Diferenciales</li>
+                            <li>Métodos Numéricos</li>
+                            <li>Tópicos Avanzados de Programación</li>
+                            <li>Fundamentos de Base de Datos</li>
+                            <li>Simulación</li>
+                            <li>Principios Eléctricos y Aplicaciones Digitales</li>
+                        </ul>
+                    </article>
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 5</h3>
+                            <span>Quinto periodo</span>
+                        </div>
+                        <ul>
+                            <li>Graficación</li>
+                            <li>Fundamentos de Telecomunicaciones</li>
+                            <li>Sistemas Operativos</li>
+                            <li>Taller de Base de Datos</li>
+                            <li>Fundamentos de Ingeniería de Software</li>
+                            <li>Arquitectura de Computadoras</li>
+                        </ul>
+                    </article>
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 6</h3>
+                            <span>Sexto periodo</span>
+                        </div>
+                        <ul>
+                            <li>Lenguajes y Autómatas I</li>
+                            <li>Redes de Computadoras</li>
+                            <li>Taller de Sistemas Operativos</li>
+                            <li>Administración de Base de Datos</li>
+                            <li>Ingeniería de Software</li>
+                            <li>Lenguajes de Interfaz</li>
+                        </ul>
+                    </article>
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 7</h3>
+                            <span>Séptimo periodo</span>
+                        </div>
+                        <ul>
+                            <li>Lenguajes y Autómatas II</li>
+                            <li>Conmutación y Enrutamiento en Redes de Datos</li>
+                            <li>Taller de Investigación I</li>
+                            <li>Gestión de Proyectos de Software</li>
+                            <li>Sistemas Programables</li>
+                        </ul>
+                    </article>
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 8</h3>
+                            <span>Octavo periodo</span>
+                        </div>
+                        <ul>
+                            <li>Programación Lógica y Funcional</li>
+                            <li>Administración de Redes</li>
+                            <li>Taller de Investigación II</li>
+                            <li>Programación Web</li>
+                        </ul>
+                    </article>
+
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 9</h3>
+                            <span>Noveno periodo</span>
+                        </div>
+                        <ul>
+                            <li>Inteligencia Artificial</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+
+                <!-- DISTRIBUCIÓN DE CRÉDITOS -->
+                <div class="credits-wrapper">
+                    <h3>Distribución de créditos de la carrera</h3>
+
+                    <div class="table-scroll">
+                        <table class="credits-table">
+                            <thead>
+                                <tr>
+                                    <th>Componente curricular</th>
+                                    <th>Créditos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Estructura genérica</td>
+                                    <td>210</td>
+                                </tr>
+                                <tr>
+                                    <td>Especialidad</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td>Residencia profesional</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Servicio social</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Actividades complementarias</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>260</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             2.3 EXTRAS
+        ========================================= -->
+        <section class="section extras-section" id="extras">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">02 · Formación complementaria</span>
+                    <h2 class="section-title">2.3. Requisitos y actividades adicionales</h2>
+                    <p class="section-description">
+                        Además de las asignaturas de la estructura genérica,
+                        el plan de estudios contempla componentes que
+                        complementan la formación académica y permiten
+                        cumplir con los requisitos para concluir la carrera.
+                    </p>
+                </div>
+
+                <div class="extras-grid">
+
+                    <article class="extra-card">
+                        <h3>Especialidad</h3>
+                        <p>
+                            Permite profundizar en un área específica de
+                            formación profesional mediante asignaturas
+                            adicionales. Las materias dependen de la
+                            especialidad autorizada y de la oferta académica
+                            disponible en el Instituto Tecnológico de Morelia.
+                        </p>
+                        <span class="extra-meta">25 créditos</span>
+                    </article>
+
+                    <article class="extra-card">
+                        <h3>Actividades complementarias</h3>
+                        <p>
+                            Contribuyen a la formación integral del estudiante
+                            mediante actividades que complementan los
+                            conocimientos adquiridos en las asignaturas.
+                            Su acreditación se realiza conforme a la normativa
+                            del TecNM y los procedimientos institucionales.
+                        </p>
+                        <span class="extra-meta">5 créditos</span>
+                    </article>
+
+                    <article class="extra-card">
+                        <h3>Servicio social</h3>
+                        <p>
+                            Consiste en realizar actividades en beneficio
+                            de la sociedad mediante programas autorizados
+                            por la institución. Busca fomentar la
+                            responsabilidad social y la participación
+                            del estudiante en necesidades de la comunidad.
+                        </p>
+                        <p>
+                            Para ISC, el procedimiento consultado contempla
+                            500 horas de servicio social, considerando el
+                            criterio de 50 horas por crédito. El registro,
+                            seguimiento y liberación deben realizarse
+                            conforme al procedimiento institucional.
+                        </p>
+                        <span class="extra-meta">10 créditos · 500 horas</span>
+                    </article>
+
+                    <article class="extra-card">
+                        <h3>Residencia profesional</h3>
+                        <p>
+                            Consiste en desarrollar un proyecto relacionado
+                            con la formación académica, aplicando los
+                            conocimientos adquiridos para atender una
+                            necesidad o resolver un problema en una empresa,
+                            institución u organización.
+                        </p>
+                        <p>
+                            La duración contemplada es de 4 a 6 meses,
+                            con un mínimo de 500 horas. Para iniciar se
+                            requiere tener acreditado el servicio social
+                            y las actividades complementarias, contar con
+                            al menos el 80% de los créditos aprobados y
+                            no tener asignaturas en curso especial.
+                        </p>
+                        <p>
+                            El proyecto requiere autorización, seguimiento,
+                            evaluación y liberación institucional.
+                        </p>
+                        <span class="extra-meta">10 créditos · 4 a 6 meses</span>
+                    </article>
+
+                    <article class="extra-card full">
+                        <h3>Consideraciones institucionales</h3>
+                        <p>
+                            Los requisitos, formatos, periodos de registro,
+                            documentación y procedimientos administrativos
+                            pueden estar sujetos a actualizaciones. Por ello,
+                            antes de realizar el servicio social o la
+                            residencia profesional, es necesario consultar
+                            los lineamientos vigentes y las indicaciones
+                            de los departamentos correspondientes del
+                            Instituto Tecnológico de Morelia.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             3. PERFIL DE EGRESADO
+        ========================================= -->
+        <section class="section profile-section" id="perfil">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">03 · Formación profesional</span>
+                    <h2 class="section-title">Perfil del egresado</h2>
+                    <p class="section-description">
+                        ¿Qué conocimientos y capacidades desarrolla un
+                        Ingeniero en Sistemas Computacionales?
+                    </p>
+                </div>
+
+                <div class="profile-intro">
+                    El egresado de Ingeniería en Sistemas Computacionales
+                    desarrolla, implementa y administra soluciones
+                    computacionales para atender necesidades de diferentes
+                    organizaciones. Su formación integra software, hardware,
+                    bases de datos y redes, considerando la calidad, la
+                    seguridad de la información, la innovación y la ética
+                    profesional.
+                </div>
+
+                <div class="profile-grid">
+
+                    <article class="profile-card">
+                        <h3>Desarrollo y administración de software</h3>
+                        <p>
+                            Desarrolla y administra aplicaciones y sistemas
+                            de software que atienden necesidades de las
+                            organizaciones, considerando criterios de
+                            calidad y productividad.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Modelado y solución de problemas</h3>
+                        <p>
+                            Modela y soluciona problemas mediante el uso
+                            de herramientas matemáticas y computacionales,
+                            aplicando procesos de análisis y evaluación
+                            para proponer soluciones.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Bases de datos y seguridad de la información</h3>
+                        <p>
+                            Diseña, implementa y administra bases de datos,
+                            optimizando el uso de sus recursos y considerando
+                            normas y mecanismos relacionados con la
+                            seguridad de la información.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Hardware, automatización y redes</h3>
+                        <p>
+                            Desarrolla soluciones relacionadas con hardware,
+                            interfaces y automatización; además, diseña,
+                            configura y administra redes de computadoras.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Gestión de proyectos e innovación</h3>
+                        <p>
+                            Participa en equipos multidisciplinarios y
+                            desarrolla soluciones innovadoras mediante
+                            la gestión de proyectos de tecnologías de
+                            información, de acuerdo con las necesidades
+                            de las organizaciones.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             REFERENCIAS INSTITUCIONALES
+        ========================================= -->
+        <section class="section references-section" id="referencias">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">Documentación y fuentes</span>
+                    <h2 class="section-title">Referencias institucionales y bibliográficas</h2>
+                    <p class="section-description">
+                        Documentos y procedimientos institucionales utilizados
+                        como referencia para organizar la información de
+                        Ingeniería en Sistemas Computacionales.
+                    </p>
+                </div>
+
+                <ul class="references-list">
+
+                    <li>
+                        <strong>1. Tecnológico Nacional de México / Instituto Tecnológico de Morelia.</strong>
+                        Retícula de Ingeniería en Sistemas Computacionales,
+                        clave ISIC-2010-224, mayo de 2016.
+                        <br>
+                        <a href="https://morelia.tecnm.mx/assets/carreras/isc/Reticula%20Ingenieria%20en%20Sistemas%20Computacionales.pdf"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar retícula oficial de ISC
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>2. Tecnológico Nacional de México.</strong>
+                        Ingeniería en Sistemas Computacionales:
+                        objetivo general y perfil de egreso.
+                        Secretaría Académica, Investigación e Innovación;
+                        Dirección de Docencia e Innovación Educativa,
+                        mayo de 2016.
+                        <br>
+                        <a href="https://www.tecnm.mx/dir_escolares/perfiles_egreso/Perfil-Objetivo%20Ingenieria%20en%20Sistemas%20Computacionales.pdf"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar perfil y objetivo de ISC
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>3. Instituto Tecnológico de Morelia.</strong>
+                        Procedimiento institucional de servicio social,
+                        ITMORELIA-IT-VI-002.
+                        <br>
+                        <a href="https://sgi.morelia.tecnm.mx/moodle/mod/folder/view.php?id=55"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar documentación de servicio social
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>4. Instituto Tecnológico de Morelia.</strong>
+                        Procedimiento institucional de residencias
+                        profesionales, ITMORELIA-IT-AC-007.
+                        <br>
+                        <a href="https://sgi.morelia.tecnm.mx/moodle/mod/folder/view.php?id=12"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar documentación de residencias profesionales
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>5. Tecnológico Nacional de México.</strong>
+                        Manual de Lineamientos Académico-Administrativos
+                        del TecNM. Lineamiento para la operación y
+                        acreditación de la residencia profesional.
+                        <br>
+                        <a href="https://conkal.tecnm.mx/index.php/es/component/phocadownload/category/179-residencias-profesionales-2021?download=945%3Alineamiento-para-la-operacion-y-acreditacion-de-la-residencia-profesional"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar lineamientos de residencia profesional
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="notice" style="margin-top: 25px; background: #303945; border-color: #aeb9c5; color: #dce2e9;">
+                    <strong>Nota:</strong>
+                    La información académica se organizó a partir de las
+                    fuentes institucionales indicadas. Para trámites,
+                    requisitos administrativos y procedimientos vigentes,
+                    se recomienda consultar directamente los documentos
+                    oficiales del TecNM y del Instituto Tecnológico de Morelia.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================= -->
+    <footer>
+        <div class="container">
+
+            <p>
+                <strong>Instituto Tecnológico de Morelia · TecNM</strong>
+            </p>
+
+            <p>
+                Proyecto académico e informativo sobre la oferta educativa.
+            </p>
+
+            <div class="footer-links">
+                <a href="index.html">Página principal</a>
+                <a href="icbs.html">Ingeniería en Ciberseguridad</a>
+                <a href="#referencias">Referencias</a>
+                <a href="#ingreso">Volver al inicio</a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT: MENÚ RESPONSIVO
+    ========================================= -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
+            );
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Cerrar el menú después de seleccionar un enlace.
+        document.querySelectorAll("#navLinks a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Abrir menú de navegación");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // Cerrar el menú al cambiar a una pantalla de escritorio.
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 700) {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            }
+        });
+    </script>
+
+</body>
+</html>
+

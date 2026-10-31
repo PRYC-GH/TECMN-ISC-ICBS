@@ -1,0 +1,1744 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Información académica sobre Ingeniería en Ciberseguridad del Instituto Tecnológico de Morelia: ingreso, retícula, semestres y perfil de egreso.">
+    <title>Ingeniería en Ciberseguridad | ITM - TecNM</title>
+
+    <style>
+        /* =========================================
+           VARIABLES Y CONFIGURACIÓN GENERAL
+        ========================================= */
+        :root {
+            --bg: #edf1f5;
+            --surface: #ffffff;
+            --surface-alt: #e2e9f0;
+            --primary: #14283e;
+            --primary-light: #1d3854;
+            --secondary: #38536d;
+            --accent: #8fa9c1;
+            --text: #202d3b;
+            --muted: #637386;
+            --border: #d0dbe5;
+            --shadow: 0 8px 25px rgba(15, 35, 55, 0.08);
+            --radius: 14px;
+            --max-width: 1180px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-header {
+            max-width: 850px;
+            margin-bottom: 35px;
+        }
+
+        .section-number {
+            display: inline-block;
+            margin-bottom: 10px;
+            color: var(--secondary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: var(--muted);
+            font-size: 1.02rem;
+        }
+
+        .subsection-title {
+            color: var(--primary);
+            font-size: 1.45rem;
+            margin: 35px 0 15px;
+        }
+
+        /* =========================================
+           NAVEGACIÓN
+        ========================================= */
+        .navbar {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 32, 49, 0.97);
+            color: #fff;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.16);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 190px;
+        }
+
+        .brand-mark {
+            width: 39px;
+            height: 39px;
+            display: grid;
+            place-items: center;
+            border: 2px solid #a9bfd3;
+            border-radius: 9px;
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.25;
+        }
+
+        .brand-text strong {
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .brand-text span {
+            color: #bdcad7;
+            font-size: 0.72rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e1e8ef;
+            font-size: 0.88rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .nav-links .nav-button {
+            padding: 9px 15px;
+            border: 1px solid #7890a8;
+            border-radius: 7px;
+        }
+
+        .nav-links .nav-button.active {
+            background: #dce7f0;
+            color: #14283e;
+            border-color: #dce7f0;
+            font-weight: 700;
+        }
+
+        .menu-toggle {
+            display: none;
+            border: 1px solid #7890a8;
+            border-radius: 7px;
+            background: transparent;
+            color: white;
+            padding: 7px 11px;
+            cursor: pointer;
+        }
+
+        /* =========================================
+           PORTADA
+        ========================================= */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 155px 0 95px;
+            color: white;
+            background:
+                radial-gradient(circle at 85% 25%, rgba(127, 163, 194, 0.20), transparent 28%),
+                linear-gradient(125deg, #102238, #1c3853 65%, #294966);
+        }
+
+        .hero::after {
+            content: "ICBS";
+            position: absolute;
+            right: 3%;
+            bottom: -55px;
+            color: rgba(255, 255, 255, 0.045);
+            font-size: clamp(8rem, 20vw, 18rem);
+            font-weight: 900;
+            letter-spacing: -12px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 850px;
+        }
+
+        .hero-label {
+            display: inline-block;
+            margin-bottom: 18px;
+            padding: 7px 13px;
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 30px;
+            color: #d5e1ec;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin-bottom: 22px;
+            font-size: clamp(2.3rem, 6vw, 4rem);
+            line-height: 1.12;
+        }
+
+        .hero p {
+            max-width: 760px;
+            color: #d3dfeb;
+            font-size: 1.08rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .hero-link {
+            display: inline-block;
+            padding: 11px 19px;
+            border: 1px solid #a9bfd3;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .hero-link.primary {
+            background: #dce7f0;
+            color: #14283e;
+        }
+
+        .hero-link:hover {
+            transform: translateY(-2px);
+            background: #fff;
+            color: #14283e;
+        }
+
+        /* =========================================
+           INGRESO
+        ========================================= */
+        .entry-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .info-card {
+            padding: 25px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .info-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .info-card p {
+            color: var(--muted);
+            font-size: 0.94rem;
+        }
+
+        .card-icon {
+            display: grid;
+            width: 42px;
+            height: 42px;
+            margin-bottom: 15px;
+            place-items: center;
+            border-radius: 10px;
+            background: var(--surface-alt);
+            color: var(--primary);
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .notice {
+            margin-top: 24px;
+            padding: 18px 20px;
+            border-left: 4px solid #496984;
+            border-radius: 0 9px 9px 0;
+            background: #e1e9f0;
+            color: #40566b;
+            font-size: 0.92rem;
+        }
+
+        /* =========================================
+           RETÍCULA GENERAL
+        ========================================= */
+        .curriculum-section {
+            background: #e4eaf0;
+        }
+
+        .curriculum-intro {
+            max-width: 900px;
+            margin-bottom: 25px;
+            color: var(--muted);
+        }
+
+        .area-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .area-card {
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .area-card:last-child {
+            grid-column: 1 / -1;
+        }
+
+        .area-card-header {
+            padding: 16px 20px;
+            background: var(--primary-light);
+            color: white;
+        }
+
+        .area-card-header h3 {
+            font-size: 1rem;
+        }
+
+        .area-card-body {
+            padding: 20px;
+        }
+
+        .subject-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .subject-list li {
+            padding: 7px 11px;
+            border: 1px solid #d5e0e9;
+            border-radius: 7px;
+            background: #f1f5f8;
+            color: #40566b;
+            font-size: 0.84rem;
+        }
+
+        /* =========================================
+           SEMESTRES
+        ========================================= */
+        .semester-summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0 30px;
+        }
+
+        .summary-item {
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            background: var(--surface);
+            text-align: center;
+        }
+
+        .summary-item strong {
+            display: block;
+            color: var(--primary);
+            font-size: 1.65rem;
+        }
+
+        .summary-item span {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        .semester-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .semester-card {
+            overflow: hidden;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(15, 35, 55, 0.05);
+        }
+
+        .semester-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 17px;
+            background: #1b344d;
+            color: white;
+        }
+
+        .semester-heading h3 {
+            font-size: 1rem;
+        }
+
+        .semester-heading span {
+            color: #c3d2e0;
+            font-size: 0.75rem;
+        }
+
+        .semester-card ul {
+            padding: 17px 17px 17px 35px;
+        }
+
+        .semester-card li {
+            margin-bottom: 9px;
+            padding-left: 2px;
+            color: #526477;
+            font-size: 0.87rem;
+            line-height: 1.45;
+        }
+
+        .semester-card li:last-child {
+            margin-bottom: 0;
+        }
+
+        .semester-card li::marker {
+            color: #68849e;
+        }
+
+        .specialty-item {
+            border-left: 3px solid #7694af;
+            padding-left: 8px !important;
+            list-style-position: inside;
+        }
+
+        /* =========================================
+           CRÉDITOS
+        ========================================= */
+        .credits-wrapper {
+            margin-top: 35px;
+            padding: 25px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .credits-wrapper h3 {
+            margin-bottom: 17px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .table-scroll {
+            overflow-x: auto;
+        }
+
+        .credits-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 420px;
+        }
+
+        .credits-table th,
+        .credits-table td {
+            padding: 13px 15px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .credits-table th {
+            background: #1b344d;
+            color: white;
+            font-size: 0.88rem;
+        }
+
+        .credits-table td {
+            color: #526477;
+            font-size: 0.91rem;
+        }
+
+        .credits-table td:last-child,
+        .credits-table th:last-child {
+            text-align: center;
+        }
+
+        .credits-table tr:last-child td {
+            border-bottom: none;
+            background: #e2e9f0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        /* =========================================
+           EXTRAS
+        ========================================= */
+        .extras-section {
+            background: #f7f9fb;
+        }
+
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .extra-card {
+            padding: 25px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .extra-card h3 {
+            margin-bottom: 11px;
+            color: var(--primary);
+            font-size: 1.15rem;
+        }
+
+        .extra-card p {
+            margin-bottom: 12px;
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        .extra-meta {
+            display: inline-block;
+            margin-top: 5px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            background: #e3ebf2;
+            color: #29455f;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .extra-card.full {
+            grid-column: 1 / -1;
+        }
+
+        /* =========================================
+           PERFIL DE EGRESO
+        ========================================= */
+        .profile-section {
+            background: #e4eaf0;
+        }
+
+        .profile-intro {
+            max-width: 900px;
+            margin-bottom: 28px;
+            padding: 23px;
+            border-radius: 12px;
+            background: #1b344d;
+            color: #e0e9f1;
+            font-size: 1rem;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .profile-card {
+            padding: 23px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: white;
+        }
+
+        .profile-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.08rem;
+        }
+
+        .profile-card p {
+            color: var(--muted);
+            font-size: 0.93rem;
+        }
+
+        /* =========================================
+           REFERENCIAS
+        ========================================= */
+        .references-section {
+            background: #14283e;
+            color: #fff;
+        }
+
+        .references-section .section-title {
+            color: #fff;
+        }
+
+        .references-section .section-description {
+            color: #c4d2df;
+        }
+
+        .references-list {
+            display: grid;
+            gap: 14px;
+            margin-top: 25px;
+            list-style: none;
+        }
+
+        .references-list li {
+            padding: 19px 21px;
+            border: 1px solid #40566c;
+            border-radius: 10px;
+            background: #1d3854;
+            color: #dce6ef;
+            font-size: 0.9rem;
+        }
+
+        .references-list strong {
+            display: block;
+            margin-bottom: 6px;
+            color: white;
+        }
+
+        .references-list a {
+            display: inline-block;
+            margin-top: 7px;
+            color: #c1d4e5;
+            overflow-wrap: anywhere;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .references-list a:hover {
+            color: #fff;
+        }
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+        footer {
+            padding: 27px 0;
+            background: #0e1d2c;
+            color: #aebdcb;
+            text-align: center;
+            font-size: 0.83rem;
+        }
+
+        footer strong {
+            color: #fff;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 12px;
+        }
+
+        .footer-links a {
+            color: #d0dce7;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        @media (max-width: 900px) {
+            .nav-links {
+                gap: 13px;
+            }
+
+            .nav-links a {
+                font-size: 0.8rem;
+            }
+
+            .semester-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 700px) {
+            html {
+                scroll-padding-top: 75px;
+            }
+
+            .nav-container {
+                min-height: 65px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                display: none;
+                width: 100%;
+                padding: 17px 5%;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: #14283e;
+                border-top: 1px solid #40566c;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                padding: 11px 0;
+                border-bottom: 1px solid #344b62;
+            }
+
+            .nav-links li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-links .nav-button {
+                display: inline-block;
+            }
+
+            .hero {
+                padding: 125px 0 75px;
+            }
+
+            .section {
+                padding: 55px 0;
+            }
+
+            .entry-grid,
+            .area-grid,
+            .extras-grid,
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .area-card:last-child,
+            .extra-card.full {
+                grid-column: auto;
+            }
+
+            .semester-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .semester-summary {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.35rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVEGACIÓN PRINCIPAL
+    ========================================= -->
+    <header class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="brand" aria-label="Regresar a la página principal">
+                <div class="brand-mark">ITM</div>
+                <div class="brand-text">
+                    <strong>TecNM Morelia</strong>
+                    <span>Instituto Tecnológico de Morelia</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Abrir menú de navegación"
+                    aria-expanded="false">
+                ☰
+            </button>
+
+            <nav aria-label="Navegación principal">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#carreras">Carreras</a></li>
+                    <li><a href="index.html#proyectos">Proyectos</a></li>
+                    <li><a href="index.html#sustentabilidad">Sustentabilidad</a></li>
+                    <li><a href="isc.html" class="nav-button">ISC</a></li>
+                    <li><a href="icbs.html" class="nav-button active" aria-current="page">Ciberseguridad</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================================
+         PORTADA
+    ========================================= -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+
+                <span class="hero-label">Oferta educativa · TecNM Morelia</span>
+
+                <h1>Ingeniería en Ciberseguridad</h1>
+
+                <p>
+                    Una formación orientada a proteger sistemas, redes,
+                    aplicaciones e información frente a amenazas y
+                    vulnerabilidades. Integra programación, infraestructura,
+                    análisis de riesgos y mecanismos de seguridad para
+                    fortalecer la protección de los recursos tecnológicos.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#ingreso" class="hero-link primary">Conocer la carrera</a>
+                    <a href="#reticula" class="hero-link">Consultar retícula</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <main>
+
+        <!-- =========================================
+             1. INGRESO
+        ========================================= -->
+        <section class="section" id="ingreso">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">01 · Perfil de ingreso</span>
+                    <h2 class="section-title">¿Qué se necesita para ingresar?</h2>
+                    <p class="section-description">
+                        Para cursar Ingeniería en Ciberseguridad es recomendable
+                        contar con interés por la informática, capacidad para
+                        analizar problemas y disposición para aprender sobre
+                        la protección de sistemas y datos. Estas habilidades
+                        facilitan el aprendizaje de la programación, las redes,
+                        los sistemas operativos y los mecanismos de seguridad
+                        informática.
+                    </p>
+                </div>
+
+                <div class="entry-grid">
+
+                    <article class="info-card">
+                        <div class="card-icon">∑</div>
+                        <h3>Razonamiento lógico y matemático</h3>
+                        <p>
+                            Capacidad para analizar problemas, reconocer
+                            patrones y comprender procedimientos lógicos
+                            y matemáticos. Estas habilidades ayudan a
+                            estudiar sistemas informáticos y desarrollar
+                            soluciones técnicas.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">⌕</div>
+                        <h3>Pensamiento analítico y atención al detalle</h3>
+                        <p>
+                            Habilidad para examinar información, identificar
+                            anomalías y analizar posibles causas de fallas.
+                            Resulta útil para comprender el funcionamiento
+                            de los sistemas y reconocer posibles riesgos
+                            de seguridad.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">⚙</div>
+                        <h3>Interés por la tecnología</h3>
+                        <p>
+                            Curiosidad por conocer el funcionamiento de
+                            las computadoras, los programas, las redes y
+                            los sistemas informáticos, así como disposición
+                            para aprender nuevas herramientas y tecnologías.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">✓</div>
+                        <h3>Ética y responsabilidad</h3>
+                        <p>
+                            Disposición para actuar con honestidad, respetar
+                            la privacidad y utilizar los conocimientos
+                            técnicos de manera responsable. La ciberseguridad
+                            requiere respetar las leyes y contar con
+                            autorización para realizar pruebas sobre
+                            sistemas informáticos.
+                        </p>
+                    </article>
+
+                    <article class="info-card">
+                        <div class="card-icon">↻</div>
+                        <h3>Autoaprendizaje y adaptabilidad</h3>
+                        <p>
+                            Capacidad para aprender de manera autónoma,
+                            resolver problemas y actualizar los conocimientos
+                            ante los cambios tecnológicos. Estas cualidades
+                            favorecen la formación continua en un campo
+                            donde evolucionan las amenazas y los mecanismos
+                            de protección.
+                        </p>
+                    </article>
+
+                </div>
+
+                <div class="notice">
+                    <strong>Importante:</strong>
+                    Las habilidades descritas son características
+                    recomendables para cursar la carrera. No constituyen
+                    una lista de requisitos oficiales de admisión.
+                    Los requisitos administrativos deben consultarse
+                    en las convocatorias vigentes del Instituto
+                    Tecnológico de Morelia.
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             2. RETÍCULA
+        ========================================= -->
+        <section class="section curriculum-section" id="reticula">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">02 · Plan de estudios</span>
+                    <h2 class="section-title">Retícula de Ingeniería en Ciberseguridad</h2>
+                    <p class="section-description">
+                        La Ingeniería en Ciberseguridad del Tecnológico
+                        Nacional de México, campus Morelia, integra
+                        conocimientos de computación, programación,
+                        redes, sistemas operativos y protección de la
+                        información. Su plan contempla asignaturas de
+                        formación básica y especializada, además de
+                        requisitos complementarios para completar
+                        la trayectoria académica.
+                    </p>
+                </div>
+
+
+                <!-- 2.1 RETÍCULA GENERAL -->
+                <h3 class="subsection-title">2.1. Asignaturas por área temática</h3>
+
+                <p class="curriculum-intro">
+                    La siguiente tabla organiza las asignaturas de la
+                    retícula por afinidad temática. Esta clasificación
+                    facilita la consulta, pero no representa su
+                    distribución por semestre.
+                </p>
+
+                <div class="area-grid">
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>A. Ciencias básicas y formación general</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Cálculo Diferencial</li>
+                                <li>Cálculo Integral</li>
+                                <li>Cálculo Vectorial</li>
+                                <li>Álgebra Lineal</li>
+                                <li>Probabilidad y Estadística</li>
+                                <li>Introducción a la Física para Ciberseguridad</li>
+                                <li>Señales en Telecomunicaciones</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>B. Programación y computación</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Introducción a la Programación</li>
+                                <li>Estructura de Datos</li>
+                                <li>Desarrollo WEB</li>
+                                <li>Análisis de Datos</li>
+                                <li>Inteligencia Artificial Aplicada a la Ciberseguridad</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>C. Redes e infraestructura</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Redes de Datos</li>
+                                <li>Redes de Datos Inalámbricas</li>
+                                <li>Arquitectura de Computadoras</li>
+                                <li>Sistemas Operativos</li>
+                                <li>Administración de Sistemas Operativos</li>
+                                <li>Administración de Redes</li>
+                                <li>Conmutación Avanzada</li>
+                                <li>Enrutamiento Avanzado</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>D. Seguridad y análisis de amenazas</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Fundamentos de Ciberseguridad</li>
+                                <li>Fundamentos de Seguridad en Sistemas Operativos</li>
+                                <li>Fundamentos de Seguridad en TI</li>
+                                <li>Seguridad en Redes Inalámbricas</li>
+                                <li>Auditoría de Seguridad</li>
+                                <li>Análisis de Malware</li>
+                                <li>Cómputo Forense</li>
+                                <li>Ciberinteligencia</li>
+                                <li>Fundamentos de Seguridad en IoT</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="area-card">
+                        <div class="area-card-header">
+                            <h3>E. Gestión y formación profesional</h3>
+                        </div>
+                        <div class="area-card-body">
+                            <ul class="subject-list">
+                                <li>Taller de Ética</li>
+                                <li>Comunicación Humana</li>
+                                <li>Desarrollo Sustentable</li>
+                                <li>Análisis y Gestión de Riesgos en Ciberseguridad</li>
+                                <li>Taller de Investigación II</li>
+                                <li>Residencia Profesional</li>
+                                <li>Servicio Social</li>
+                                <li>Actividades Complementarias</li>
+                                <li>Especialidad</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                </div>
+
+
+                <!-- 2.2 SEMESTRES -->
+                <h3 class="subsection-title">2.2. Distribución de asignaturas por semestre</h3>
+
+                <p class="curriculum-intro">
+                    La siguiente distribución presenta las asignaturas
+                    conforme a la retícula oficial del Tecnológico
+                    Nacional de México, clave ICBS-2024-249,
+                    publicada en junio de 2024.
+                </p>
+
+                <div class="semester-summary">
+                    <div class="summary-item">
+                        <strong>9</strong>
+                        <span>Semestres</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>260</strong>
+                        <span>Créditos totales</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>2024</strong>
+                        <span>Retícula ICBS-2024-249</span>
+                    </div>
+                </div>
+
+                <div class="semester-grid">
+
+                    <!-- SEMESTRE 1 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 1</h3>
+                            <span>Primer periodo</span>
+                        </div>
+                        <ul>
+                            <li>Cálculo Diferencial</li>
+                            <li>Fundamentos de Estructuras Discretas para la Ciberseguridad</li>
+                            <li>Taller de Ética</li>
+                            <li>Comunicación Humana</li>
+                            <li>Fundamentos de Ciberseguridad</li>
+                            <li>Desarrollo Sustentable</li>
+                        </ul>
+                    </article>
+
+                    <!-- SEMESTRE 2 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 2</h3>
+                            <span>Segundo periodo</span>
+                        </div>
+                        <ul>
+                            <li>Cálculo Integral</li>
+                            <li>Aspectos Legales, Éticos y Sociales en Ciberseguridad</li>
+                            <li>Introducción a la Programación</li>
+                            <li>Introducción a la Física para Ciberseguridad</li>
+                            <li>Álgebra Lineal</li>
+                            <li>Probabilidad y Estadística</li>
+                        </ul>
+                    </article>
+
+                    <!-- SEMESTRE 3 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 3</h3>
+                            <span>Tercer periodo</span>
+                        </div>
+                        <ul>
+                            <li>Cálculo Vectorial</li>
+                            <li>Estructura de Datos</li>
+                            <li>Redes de Datos</li>
+                            <li>Sistemas Operativos</li>
+                            <li>Principios Electromagnéticos para Ciberseguridad</li>
+                            <li>Arquitectura de Computadoras</li>
+                        </ul>
+                    </article>
+
+                    <!-- SEMESTRE 4 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 4</h3>
+                            <span>Cuarto periodo</span>
+                        </div>
+                        <ul>
+                            <li>Señales en Telecomunicaciones</li>
+                            <li>Criptografía</li>
+                            <li>Fundamentos de Seguridad en Sistemas Operativos</li>
+                            <li>Desarrollo WEB</li>
+                            <li>Fundamentos de Base de Datos</li>
+                            <li>Administración de Sistemas Operativos</li>
+                        </ul>
+                    </article>
+
+                    <!-- SEMESTRE 5 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 5</h3>
+                            <span>Quinto periodo</span>
+                        </div>
+                        <ul>
+                            <li>Cómputo Forense</li>
+                            <li>Pruebas de Intrusión</li>
+                            <li>Seguridad en Redes Inalámbricas</li>
+                            <li>Análisis y Gestión de Riesgos en Ciberseguridad</li>
+                            <li>Fundamentos de Investigación</li>
+                            <li>Conmutación Avanzada</li>
+                        </ul>
+                    </article>
+
+                    <!-- SEMESTRE 6 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 6</h3>
+                            <span>Sexto periodo</span>
+                        </div>
+                        <ul>
+                            <li>Análisis de Malware</li>
+                            <li>Gestión de Proyectos de Ciberseguridad</li>
+                            <li>Ciberinteligencia</li>
+                            <li>Auditoría de Seguridad</li>
+                            <li>Taller de Investigación I</li>
+                            <li>Enrutamiento Avanzado</li>
+                        </ul>
+                    </article>
+
+                    <!-- SEMESTRE 7 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 7</h3>
+                            <span>Séptimo periodo</span>
+                        </div>
+                        <ul>
+                            <li>Fundamentos de Seguridad en IoT</li>
+                            <li>Servicios Seguros de Internet</li>
+                            <li>Inteligencia Artificial Aplicada a la Ciberseguridad</li>
+                            <li>Análisis de Datos</li>
+                            <li>Taller de Investigación II</li>
+                            <li>Administración de Redes</li>
+                        </ul>
+                    </article>
+
+                    <!-- SEMESTRE 8 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 8</h3>
+                            <span>Octavo periodo</span>
+                        </div>
+                        <ul>
+                            <li>Tópicos Avanzados de Ciberseguridad</li>
+                            <li class="specialty-item">Espacio de especialidad 1</li>
+                            <li class="specialty-item">Espacio de especialidad 2</li>
+                            <li class="specialty-item">Espacio de especialidad 3</li>
+                            <li class="specialty-item">Espacio de especialidad 4</li>
+                            <li class="specialty-item">Espacio de especialidad 5</li>
+                        </ul>
+                    </article>
+
+                    <!-- SEMESTRE 9 -->
+                    <article class="semester-card">
+                        <div class="semester-heading">
+                            <h3>Semestre 9</h3>
+                            <span>Noveno periodo</span>
+                        </div>
+                        <ul>
+                            <li>Residencia Profesional</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+
+                <!-- DISTRIBUCIÓN DE CRÉDITOS -->
+                <div class="credits-wrapper">
+                    <h3>Distribución de créditos de la carrera</h3>
+
+                    <div class="table-scroll">
+                        <table class="credits-table">
+                            <thead>
+                                <tr>
+                                    <th>Componente curricular</th>
+                                    <th>Créditos</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Estructura genérica</td>
+                                    <td>205</td>
+                                </tr>
+                                <tr>
+                                    <td>Especialidad</td>
+                                    <td>30</td>
+                                </tr>
+                                <tr>
+                                    <td>Residencia profesional</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Servicio social</td>
+                                    <td>10</td>
+                                </tr>
+                                <tr>
+                                    <td>Actividades complementarias</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td>260</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             2.3 EXTRAS
+        ========================================= -->
+        <section class="section extras-section" id="extras">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">02 · Formación complementaria</span>
+                    <h2 class="section-title">2.3. Requisitos y actividades adicionales</h2>
+                    <p class="section-description">
+                        Además de las asignaturas de formación básica y
+                        especializada, la retícula contempla componentes
+                        adicionales que contribuyen a la formación integral
+                        y permiten completar la trayectoria académica.
+                    </p>
+                </div>
+
+                <div class="extras-grid">
+
+                    <article class="extra-card">
+                        <h3>Especialidad</h3>
+                        <p>
+                            La especialidad permite profundizar en un área
+                            específica de la ciberseguridad mediante
+                            asignaturas orientadas a fortalecer las
+                            competencias profesionales del estudiante.
+                        </p>
+                        <p>
+                            El Instituto Tecnológico de Morelia publica
+                            la especialidad <strong>Respuesta a Incidentes
+                            de Ciberseguridad</strong>, enfocada en la
+                            atención de incidentes, las estrategias de
+                            mitigación y recuperación y el fortalecimiento
+                            de la seguridad de las organizaciones.
+                        </p>
+                        <p>
+                            Las asignaturas que la integran deben
+                            consultarse en la retícula y en la oferta
+                            académica correspondiente.
+                        </p>
+                        <span class="extra-meta">30 créditos</span>
+                    </article>
+
+                    <article class="extra-card">
+                        <h3>Actividades complementarias</h3>
+                        <p>
+                            Contribuyen a la formación integral del
+                            estudiante mediante experiencias que
+                            complementan los conocimientos adquiridos
+                            en las asignaturas de la carrera.
+                        </p>
+                        <p>
+                            Su acreditación debe realizarse conforme
+                            a los lineamientos del Tecnológico Nacional
+                            de México y los procedimientos establecidos
+                            por el campus.
+                        </p>
+                        <span class="extra-meta">5 créditos</span>
+                    </article>
+
+                    <article class="extra-card">
+                        <h3>Servicio social</h3>
+                        <p>
+                            Consiste en realizar actividades en beneficio
+                            de la sociedad mediante programas autorizados
+                            por la institución. Su propósito es fomentar
+                            la responsabilidad social y permitir que
+                            el estudiante participe en actividades
+                            relacionadas con las necesidades de la comunidad.
+                        </p>
+                        <p>
+                            La retícula de Ingeniería en Ciberseguridad
+                            contempla 10 créditos para este requisito.
+                            Las horas, las condiciones de ingreso,
+                            el registro y la liberación deben comprobarse
+                            en el procedimiento institucional vigente.
+                        </p>
+                        <span class="extra-meta">10 créditos</span>
+                    </article>
+
+                    <article class="extra-card">
+                        <h3>Residencia profesional</h3>
+                        <p>
+                            Consiste en desarrollar un proyecto relacionado
+                            con la formación académica del estudiante,
+                            aplicando sus conocimientos para atender
+                            una necesidad o resolver un problema en una
+                            empresa, institución u organización.
+                        </p>
+                        <p>
+                            La retícula contempla 10 créditos para la
+                            residencia profesional. Su realización
+                            y acreditación están sujetas a los requisitos
+                            académicos y administrativos establecidos
+                            por el TecNM.
+                        </p>
+                        <p>
+                            La duración, los requisitos de ingreso,
+                            el seguimiento y la liberación deben
+                            verificarse en los lineamientos vigentes
+                            y en el procedimiento institucional del campus.
+                        </p>
+                        <span class="extra-meta">10 créditos</span>
+                    </article>
+
+                    <article class="extra-card full">
+                        <h3>Consideraciones institucionales</h3>
+                        <p>
+                            Los procedimientos de servicio social,
+                            residencia profesional y actividades
+                            complementarias deben realizarse conforme
+                            a la normativa vigente del Tecnológico
+                            Nacional de México y del Instituto
+                            Tecnológico de Morelia.
+                        </p>
+                        <p>
+                            Para conocer formatos, periodos de registro,
+                            documentación, requisitos y condiciones
+                            de liberación, es necesario consultar
+                            directamente los procedimientos institucionales
+                            correspondientes.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             3. PERFIL DE EGRESADO
+        ========================================= -->
+        <section class="section profile-section" id="perfil">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">03 · Formación profesional</span>
+                    <h2 class="section-title">Perfil del egresado</h2>
+                    <p class="section-description">
+                        ¿Qué conocimientos y capacidades desarrolla un
+                        Ingeniero en Ciberseguridad?
+                    </p>
+                </div>
+
+                <div class="profile-intro">
+                    El egresado de Ingeniería en Ciberseguridad del
+                    Tecnológico Nacional de México cuenta con competencias
+                    para proteger la información y los sistemas tecnológicos
+                    de las organizaciones. Su formación integra conocimientos
+                    de programación, sistemas operativos, redes, análisis
+                    de riesgos y mecanismos de seguridad, con énfasis en
+                    la responsabilidad ética y social.
+                </div>
+
+                <div class="profile-grid">
+
+                    <article class="profile-card">
+                        <h3>Integración de sistemas y tecnologías seguras</h3>
+                        <p>
+                            Integra sistemas operativos, lenguajes de
+                            programación, redes y otros entornos tecnológicos
+                            para desarrollar soluciones de seguridad
+                            informática que respondan a las necesidades
+                            de las organizaciones.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Monitoreo y protección de la información</h3>
+                        <p>
+                            Monitorea, analiza y controla información
+                            mediante herramientas y marcos de referencia
+                            orientados a proteger los recursos informáticos,
+                            considerando la ética, la privacidad y la
+                            responsabilidad social.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Evaluación de riesgos y vulnerabilidades</h3>
+                        <p>
+                            Evalúa los riesgos de seguridad y las
+                            vulnerabilidades de la información mediante
+                            metodologías, normas y estándares, con el
+                            propósito de identificar amenazas y contribuir
+                            a la protección de los sistemas.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Diseño de políticas y controles de seguridad</h3>
+                        <p>
+                            Diseña políticas de seguridad informática
+                            y propone controles que ayuden a prevenir
+                            incidentes, reducir riesgos y fortalecer
+                            la protección de los recursos tecnológicos.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Gestión de incidentes de seguridad</h3>
+                        <p>
+                            Gestiona incidentes y eventos de seguridad
+                            informática mediante acciones orientadas
+                            a reducir sus efectos, recuperar los servicios
+                            afectados y mantener la continuidad de las
+                            operaciones de las organizaciones.
+                        </p>
+                    </article>
+
+                    <article class="profile-card">
+                        <h3>Aplicación de métodos criptográficos</h3>
+                        <p>
+                            Aplica métodos criptográficos para establecer
+                            mecanismos y protocolos de seguridad en la
+                            transmisión de datos a nivel de aplicación,
+                            contribuyendo a proteger la información
+                            durante su intercambio.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =========================================
+             REFERENCIAS INSTITUCIONALES
+        ========================================= -->
+        <section class="section references-section" id="referencias">
+            <div class="container">
+
+                <div class="section-header">
+                    <span class="section-number">Documentación y fuentes</span>
+                    <h2 class="section-title">Referencias institucionales y bibliográficas</h2>
+                    <p class="section-description">
+                        Documentos institucionales y académicos utilizados
+                        como referencia para organizar la información
+                        de Ingeniería en Ciberseguridad.
+                    </p>
+                </div>
+
+                <ul class="references-list">
+
+                    <li>
+                        <strong>1. Instituto Tecnológico de Morelia.</strong>
+                        Ingeniería en Ciberseguridad. Información
+                        institucional de la carrera y perfil de ingreso.
+                        <br>
+                        <a href="https://morelia.tecnm.mx/academicos/ing-ciberseguridad"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar información institucional de la carrera
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>2. Tecnológico Nacional de México.</strong>
+                        Retícula de Ingeniería en Ciberseguridad,
+                        clave ICBS-2024-249, junio de 2024.
+                        <br>
+                        <a href="https://www.tecnm.mx/dir_escolares/reticulas/Reticula%20Ingenieria%20en%20Ciberseguridad.pdf"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar retícula oficial de Ciberseguridad
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>3. Instituto Tecnológico de Morelia.</strong>
+                        Especialidad en Respuesta a Incidentes de Ciberseguridad.
+                        <br>
+                        <a href="https://morelia.tecnm.mx/academicos/ing-ciberseguridad/especialidad/22"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar especialidad
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>4. Instituto Tecnológico de Morelia.</strong>
+                        Ingeniería en Ciberseguridad: plan de estudio y
+                        documentación relacionada con la trayectoria académica.
+                        <br>
+                        <a href="https://morelia.tecnm.mx/academicos/ing-ciberseguridad/plan_estudio/"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar plan de estudio
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>5. Instituto Tecnológico de Morelia.</strong>
+                        Procedimientos institucionales de servicio social.
+                        <br>
+                        <a href="https://sgi.morelia.tecnm.mx/moodle/mod/folder/view.php?id=55"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar documentación de servicio social
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>6. Instituto Tecnológico de Morelia.</strong>
+                        Procedimientos institucionales de residencias profesionales.
+                        <br>
+                        <a href="https://sgi.morelia.tecnm.mx/moodle/mod/folder/view.php?id=12"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar documentación de residencias profesionales
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>7. Instituto Tecnológico de Morelia.</strong>
+                        Ingeniería en Ciberseguridad: perfil de egreso.
+                        <br>
+                        <a href="https://morelia.tecnm.mx/academicos/ing-ciberseguridad/plan_egreso/"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar perfil de egreso
+                        </a>
+                    </li>
+
+                    <li>
+                        <strong>8. Tecnológico Nacional de México.</strong>
+                        Planes de estudio registrados en profesiones
+                        2009-2024. Registro de Ingeniería en Ciberseguridad,
+                        ICB-2024-249.
+                        <br>
+                        <a href="https://www.tecnm.mx/?vista=Normateca"
+                           target="_blank" rel="noopener noreferrer">
+                            Consultar Normateca del TecNM
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="notice" style="margin-top: 25px; background: #1d3854; border-color: #8fa9c1; color: #dce6ef;">
+                    <strong>Nota:</strong>
+                    La información académica se organizó a partir de
+                    las fuentes institucionales indicadas. Para trámites,
+                    requisitos administrativos y procedimientos vigentes,
+                    se recomienda consultar directamente los documentos
+                    oficiales del TecNM y del Instituto Tecnológico
+                    de Morelia.
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         PIE DE PÁGINA
+    ========================================= -->
+    <footer>
+        <div class="container">
+
+            <p>
+                <strong>Instituto Tecnológico de Morelia · TecNM</strong>
+            </p>
+
+            <p>
+                Proyecto académico e informativo sobre la oferta educativa.
+            </p>
+
+            <div class="footer-links">
+                <a href="index.html">Página principal</a>
+                <a href="isc.html">Ingeniería en Sistemas Computacionales</a>
+                <a href="#referencias">Referencias</a>
+                <a href="#ingreso">Volver al inicio</a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT: MENÚ RESPONSIVO
+    ========================================= -->
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("open");
+
+            menuToggle.setAttribute("aria-expanded", isOpen);
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
+            );
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+        });
+
+        // Cerrar el menú después de seleccionar un enlace.
+        document.querySelectorAll("#navLinks a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Abrir menú de navegación");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        // Cerrar el menú al cambiar a una pantalla de escritorio.
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 700) {
+                navLinks.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.textContent = "☰";
+            }
+        });
+    </script>
+
+</body>
+</html>
+
